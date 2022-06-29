@@ -1,10 +1,19 @@
-import Login from "./components/login/Login";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AuthLayout from "./Layouts/Auth.Layout/AuthLayout";
+import ProfileLayout from "./Layouts/Profile.Layout/ProfileLayout";
 
 function App() {
+  const isLoged = false
   return (
-    <div className="App">
-     <Login/>
-    </div>
+    <Router>
+    
+      <Routes>
+        <Route path='/' element= {isLoged? <ProfileLayout/>: <AuthLayout/>}/>
+
+      </Routes>
+   
+
+    </Router>
   );
 }
 
